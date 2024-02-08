@@ -18,7 +18,7 @@ class CanvasExample4(Widget):
             self.line = Line(points=(self.first_letter_start_pos, self.center_y, *self.ellipse.pos), width=4)
             self.line2 = Line(points=(), width=4)
             self.line3 = Line(points=(), width=4)
-        Clock.schedule_interval(self.update, 1/10)
+        Clock.schedule_interval(self.update, 1/20)
     def on_size(self, *args):
         self.ellipse.pos = (self.first_letter_start_pos, self.center_y)
         self.line.points = (self.first_letter_start_pos, self.center_y, *self.ellipse.pos)
@@ -113,8 +113,8 @@ class CanvasExample4(Widget):
         else : self.line3.points += self.ellipse.pos
 
 
-class TheMainApp(App):
+class TheFabApp(App):
     def build(self):
         return CanvasExample4()
 
-TheMainApp().run()
+TheFabApp().run()
